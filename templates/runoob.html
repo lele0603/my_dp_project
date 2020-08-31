@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+<head>
+<body>
+{% extends "base.html" %}
+
+{% comment %} {% load my_tags %} {% endcomment %}
+
+{% comment %} <p>{% if num > 90 and num <= 100%}</p>
+Wonderful!
+{% elif num > 60 and num <= 90%}
+Good!
+{% else %}
+Bad~
+{% endif %} {% endcomment %}
+{% comment %} <p>{% for i,j in views_dict.items %}
+{{ i }}---{{ j }}
+{% endfor %}
+</p> {% endcomment %}
+<p>
+{% comment %} {% for i in views_list %}
+{{ i }}
+{% endfor %} {% endcomment %}
+{% comment %} 反向输出{% endcomment %}
+{% comment %} {% for i in views_list reversed %}
+{{ i }}
+{% endfor %}  {% endcomment %}
+
+{% comment %} 
+在 {% for %} 标签里可以通过 {{forloop}} 变量获取循环序号。
+forloop.counter: 顺序获取循环序号，从 1 开始计算
+forloop.counter0: 顺序获取循环序号，从 0 开始计算
+forloop.revcounter: 倒叙获取循环序号，结尾序号为 1
+forloop.revcounter0: 倒叙获取循环序号，结尾序号为 0
+forloop.first（一般配合if标签使用）: 第一条数据返回 True，其他数据返回 False
+forloop.last（一般配合if标签使用）: 最后一条数据返回 True，其他数据返回 False
+{% endcomment %}
+{% comment %} {% for i in views_list %}
+    {{ forloop.counter }} {% endcomment %}
+    {% comment %} {{ forloop.counter0 }} {% endcomment %}
+    {% comment %} {{ forloop.revcounter }} {% endcomment %}
+    {% comment %} {{ forloop.revcounter0 }} {% endcomment %}
+    {% comment %} {{ forloop.first }} {% endcomment %}
+    {% comment %} {{ forloop.last }} {% endcomment %}
+    {% comment %} {% empty %} {% endcomment %}
+    {% comment %} Here is an empty list! {% endcomment %}
+    {% comment %} {% endfor %}
+    {% for athlete in athlete_list %}
+    <h1>{{  athlete.name}}</h1>
+    <ul>
+    {% for sport in athlete.sports_played %}
+        <li>{{ sport }}</li>
+    {% endfor %}
+    {% endfor %}
+    </ul> {% endcomment %}
+    {% comment %} {% load static %}
+    {{name}}<img src="{% static "images/timg.jpeg" %}" alt="runoob-logo"> {% endcomment %}
+
+    {% block mainbody %}
+    <p>继承base.html</p>
+    {% endblock %}
+</p>
+   
+</body>
+</html>
