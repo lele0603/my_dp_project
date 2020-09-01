@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'TestModel',
     # 'api_test',
 ]
 
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'mpy_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mf_project_db',
         'USER': 'root',
         'PASSWORD': 'tal@100tal.coM',
