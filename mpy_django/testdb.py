@@ -15,7 +15,12 @@ def testdb(request):
     # 初始化
     response = ""
     response1 = ""
-
+    test1 = Test.objects.get(id=1)
+    test1.name = 'Google'
+    # Test.objects.all().update(name='Google')
+    # Test.objects.filter(id=1).update(name='Microsoft')
+    test1.save()
+    # test.delete()--删除数据
     # 通过objects这个模型管理器的all()获得所有数据行，相当于SQL中的SELECT * FROM
     list = Test.objects.all()
 

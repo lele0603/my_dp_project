@@ -1,4 +1,4 @@
-"""mpy_django URL Configuration
+"""app01 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,14 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
-from . import views, testdb, search, search2
+
 urlpatterns = [
-    path('admin/', admin.site.urls,),
-    url(r'^hello$', views.hello),
-    url(r'^runoob$', views.runoob),
-    url(r'^testdb$', testdb.testdb),
-    url(r'^search-form$', search.search_form),
-    url(r'^search$', search.search),
-    url(r'^search-post$', search2.search_post),
+    path('admin/', admin.site.urls),
 ]
